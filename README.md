@@ -2,7 +2,7 @@
 ### Project 1: Hello World!
 * [Hello World!](https://github.com/odukabdulbasit/HelloWorld)
 
-```
+```kotlin
 fun helloWorld() {
   Log.i("message", "Hello World!")
 }
@@ -18,3 +18,4 @@ Or
         android:textSize="24sp"
         android:textColor="@android:color/black"/>
 ```
+
