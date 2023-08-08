@@ -38,5 +38,29 @@ private fun showToast(message: String) {
 
 
 
+### Project 3: Handling Text
+* [Text Handling](https://github.com/odukabdulbasit/TextHandling)
+
+```kotlin
+// Handling Text Input with EditText and Displaying it on a TextView
+
+// Find the EditText and Button views from the layout
+val editText: EditText = findViewById(R.id.editText)
+val buttonShowText: Button = findViewById(R.id.buttonShowText)
+val textView: TextView = findViewById(R.id.textView)
+
+// Set an OnClickListener for the "Show Text" button
+buttonShowText.setOnClickListener {
+    // Retrieve the text entered in the EditText
+    val inputText = editText.text.toString()
+    
+    // Display the entered text on the TextView
+    textView.text = "You entered: $inputText"
+}
+
+```
+
+
+
 
 
