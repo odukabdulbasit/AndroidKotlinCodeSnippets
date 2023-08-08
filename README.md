@@ -19,3 +19,22 @@ Or
         android:textColor="@android:color/black"/>
 ```
 
+
+### Project 2: Button Click Event
+* [Button Click Event](https://github.com/odukabdulbasit/ButtonClickEvent)
+
+```kotlin
+buttonShowToast.setOnClickListener {
+  showToast("Hello, Toast!")
+}
+
+
+private fun showToast(message: String) {
+  Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
+```
+
+
+
+
+
