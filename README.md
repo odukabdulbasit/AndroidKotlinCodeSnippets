@@ -24,14 +24,16 @@ Or
 * [Button Click Event](https://github.com/odukabdulbasit/ButtonClickEvent)
 
 ```kotlin
+// Implement Button Click Event and Show Toast Message
+val buttonShowToast: Button = findViewById(R.id.buttonShowToast)
 buttonShowToast.setOnClickListener {
-  showToast("Hello, Toast!")
+    showToast("Hello, Toast!")
 }
-
 
 private fun showToast(message: String) {
-  Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
+
 ```
 
 
