@@ -63,6 +63,26 @@ buttonShowText.setOnClickListener {
 
 
 ### Project 4: Radio Button Group
+* [Radio Button Group](https://github.com/odukabdulbasit/RadioButton)
+
+```kotlin
+// Using RadioButton and RadioGroup for Selecting Options
+
+// Find the RadioGroup, Button, and TextView views from the layout
+val radioGroup: RadioGroup = findViewById(R.id.radioGroup)
+val buttonShowSelection: Button = findViewById(R.id.buttonShowSelection)
+val textViewSelection: TextView = findViewById(R.id.textViewSelection)
+
+// Set an OnClickListener for the "Show Selection" button
+buttonShowSelection.setOnClickListener {
+    val selectedOptionId = radioGroup.checkedRadioButtonId
+    val selectedRadioButton: RadioButton = findViewById(selectedOptionId)
+
+    val selectedText = selectedRadioButton.text.toString()
+    textViewSelection.text = "Selected Option: $selectedText"
+}
+
+```
 
 
 
