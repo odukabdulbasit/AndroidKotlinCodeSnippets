@@ -89,37 +89,45 @@ buttonShowSelection.setOnClickListener {
 * [Calculator](https://github.com/odukabdulbasit/Simple_Calculator)
 
 ```kotlin
-<!-- ConstraintLayout for Simple Calculator UI -->
+fun onNumberClick(view: View) {
+        val button = view as Button
+        currentNumber += button.text
+        textViewResult.setText(currentNumber)
+    }
 
-<!-- TextView to display result -->
-<TextView
-    android:id="@+id/textViewResult"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:textSize="24sp"
-    android:gravity="end"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    android:layout_marginTop="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginStart="16dp"/>
+    fun onOperationClick(view: View) {
+        val button = view as Button
+        currentOperator = button.text.toString()
+        firstNumber = currentNumber
+        currentNumber = ""
+    }
 
-<!-- GridLayout for buttons -->
-<GridLayout
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:columnCount="4"
-    android:rowCount="5"
-    app:layout_constraintTop_toBottomOf="@+id/textViewResult"
-    app:layout_constraintBottom_toTopOf="@+id/buttonEquals"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintHorizontal_bias="0.5">
+    fun onEqualsClick(view: View) {
+        val number1 = firstNumber.toDoubleOrNull() ?: return
+        val number2 = textViewResult.text.toString().toDoubleOrNull() ?: return
 
-    <!-- Number Buttons, Operation Buttons, and Equals Button -->
-    <!-- Add your button elements here -->
-</GridLayout>
+        val result = when (currentOperator) {
+            "+" -> number1 + number2
+            "-" -> number1 - number2
+            "*" -> number1 * number2
+            "/" -> number1 / number2
+            else -> return
+        }
+
+        textViewResult.setText(result.toString())
+        currentNumber = result.toString()
+    }
+
+    fun onDeleteClick(view: View) {
+        currentNumber = ""
+        textViewResult.setText("")
+    }
+
+    fun onClearClick(view: View) {
+        currentNumber = ""
+        firstNumber = ""
+        textViewResult.setText("")
+    }
 
 
 ```
