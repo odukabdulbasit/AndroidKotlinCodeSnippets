@@ -1,4 +1,4 @@
-# Android Kotlin Gems Projects
+# Android Kotlin Code Snippets
 ### Project 1: Hello World!
 * [Hello World!](https://github.com/odukabdulbasit/HelloWorld)
 
