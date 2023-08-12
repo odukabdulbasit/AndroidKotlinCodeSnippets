@@ -1,5 +1,5 @@
 # Android Kotlin Code Snippets
-### Project 1: Hello World!
+### <ins> Project 1: Hello World! </ins>
 * [Hello World!](https://github.com/odukabdulbasit/HelloWorld)
 
 ```kotlin
@@ -20,7 +20,7 @@ Or
 ```
 
 
-### Project 2: Button Click Event
+### <ins> Project 2: Button Click Event </ins>
 * [Button Click Event](https://github.com/odukabdulbasit/ButtonClickEvent)
 
 ```kotlin
@@ -38,7 +38,7 @@ private fun showToast(message: String) {
 
 
 
-### Project 3: Handling Text
+### <ins> Project 3: Handling Text </ins>
 * [Text Handling](https://github.com/odukabdulbasit/TextHandling)
 
 ```kotlin
@@ -62,7 +62,7 @@ buttonShowText.setOnClickListener {
 
 
 
-### Project 4: Radio Button Group
+### <ins> Project 4: Radio Button Group </ins>
 * [Radio Button Group](https://github.com/odukabdulbasit/RadioButton)
 
 ```kotlin
@@ -85,7 +85,7 @@ buttonShowSelection.setOnClickListener {
 ```
 
 
-### Project 5: Calculator
+### <ins> Project 5: Calculator </ins>
 * [Calculator](https://github.com/odukabdulbasit/Simple_Calculator)
 
 ```kotlin
@@ -134,7 +134,7 @@ fun onNumberClick(view: View) {
 
 
 
-### Project 6: Simple Email Password Login
+### <ins> Project 6: Simple Email Password Login </ins>
 * [Simple Email Password Login](https://github.com/odukabdulbasit/Simple_Email_Password_Login)
 
 ```kotlin
