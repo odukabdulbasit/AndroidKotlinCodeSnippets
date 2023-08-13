@@ -181,5 +181,20 @@ class MainActivity : AppCompatActivity() {
 ```
 
 
+### <ins> Project 7: ListView </ins>
+* [ListView](https://github.com/odukabdulbasit/SimpleListView)
+
+```kotlin
+
+// Displaying a List of Items using ListView with ArrayAdapter
+
+val items = arrayOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+
+val listView: ListView = findViewById(R.id.listView)
+val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, items)
+listView.adapter = adapter
+
+
+```
 
 
