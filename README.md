@@ -203,6 +203,9 @@ listView.adapter = adapter
 
 ```kotlin
 
+//ItemModel.kt:
+data class ItemModel(val itemName: String)
+
 
 
 ```
