@@ -198,7 +198,7 @@ listView.adapter = adapter
 ```
 
 
-### <ins> Project 7: RecyclerView </ins>
+### <ins> Project 8: RecyclerView </ins>
 * [RecyclerView](https://github.com/odukabdulbasit/RecyclerView)
 
 ```kotlin
