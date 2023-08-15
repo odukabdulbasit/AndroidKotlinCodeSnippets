@@ -267,3 +267,33 @@ class MainActivity : AppCompatActivity() {
 ```
 
 
+### <ins> Project 9: ViewPager </ins>
+* [ViewPager](https://github.com/odukabdulbasit/ViewPager)
+
+```kotlin
+
+// ViewPager Adapter
+class MyPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
+    private val fragments = listOf(
+        FragmentFirst(),
+        FragmentSecond(),
+        FragmentThird()
+    )
+
+    override fun getCount(): Int {
+        return fragments.size
+    }
+
+    override fun getItem(position: Int): Fragment {
+        return fragments[position]
+    }
+}
+
+
+// Initialize ViewPager and PagerAdapter in MainActivity.kt
+val viewPager: ViewPager = findViewById(R.id.viewPager)
+val pagerAdapter = ViewPagerAdapter(supportFragmentManager)
+viewPager.adapter = pagerAdapter
+
+
+```
