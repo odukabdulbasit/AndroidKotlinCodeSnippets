@@ -297,3 +297,21 @@ viewPager.adapter = pagerAdapter
 
 
 ```
+
+### <ins> Project 10: WebView </ins>
+* [WebView](https://github.com/odukabdulbasit/WebView)
+
+```kotlin
+// Manifest
+<uses-permission android:name="android.permission.INTERNET" />
+
+// MainActivity.kt
+val webView: WebView = findViewById(R.id.webView)
+webView.webViewClient = WebViewClient()
+
+        // Load a website
+webView.loadUrl("https://Your WebSite")
+
+
+```
+
