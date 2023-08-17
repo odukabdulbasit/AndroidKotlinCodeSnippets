@@ -341,7 +341,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 
 ### <ins> Project 12: Basic Stopwatch with Chronometer </ins>
-* [Basic Stopwatch with Chronometer](https://github.com/odukabdulbasit/Intent)
+* [Basic Stopwatch with Chronometer](https://github.com/odukabdulbasit/Stopwatch_with_Chronometer)
 
 ```kotlin
 
@@ -370,6 +370,54 @@ private var isRunning = false
             }
         }
     }
+
+```
+
+
+### <ins> Project 13: Custom Dialog with Alert Dialog </ins>
+* [Custom Dialog with Alert Dialog](https://github.com/odukabdulbasit/Custom_Dialog_with_AlertDialog)
+
+```kotlin
+
+import android.app.AlertDialog
+import android.content.Context
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import kotlinx.android.synthetic.main.custom_dialog_layout.view.*
+
+class CustomDialog(context: Context) : AlertDialog(context) {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val inflater = LayoutInflater.from(context)
+        val dialogView = inflater.inflate(R.layout.custom_dialog_layout, null)
+
+        // Customize the dialog view here
+        dialogView.dialogTitle.text = "Custom Dialog"
+        dialogView.dialogMessage.text = "This is a custom dialog example."
+
+        // Set click listener for buttons
+        dialogView.btnCancel.setOnClickListener {
+            dismiss()
+        }
+
+        dialogView.btnOk.setOnClickListener {
+            // Do something when OK button is clicked
+            dismiss()
+        }
+
+        // Set the custom view to the dialog
+        setView(dialogView)
+    }
+}
+
+
+// Usage
+val customDialog = CustomDialog(this)
+customDialog.show()
+
 
 ```
 
