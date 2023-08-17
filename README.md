@@ -315,3 +315,27 @@ webView.loadUrl("https://Your WebSite")
 
 ```
 
+
+### <ins> Project 11: Open New Activity With Intent </ins>
+* [Intent](https://github.com/odukabdulbasit/Intent)
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Find the button in your main activity layout
+        findViewById<View>(R.id.btnOpenSecondActivity).setOnClickListener {
+            openSecondActivityTextClick(it)
+        }
+    }
+
+    private fun openSecondActivityTextClick(view: View) {
+        // Create an intent to open the new activity
+        val intent = Intent(this@MainActivity, MainActivity2::class.java)
+        startActivity(intent)
+    }
+
+
+```
+
