@@ -339,3 +339,37 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 ```
 
+
+### <ins> Project 12: Basic Stopwatch with Chronometer </ins>
+* [Basic Stopwatch with Chronometer](https://github.com/odukabdulbasit/Intent)
+
+```kotlin
+
+private var isRunning = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val start_button = findViewById<Button>(R.id.start_button)
+        val stop_button = findViewById<Button>(R.id.stop_button)
+        val chronometer = findViewById<Chronometer>(R.id.chronometer)
+
+        start_button.setOnClickListener {
+            if (!isRunning) {
+                chronometer.base = SystemClock.elapsedRealtime()
+                chronometer.start()
+                isRunning = true
+            }
+        }
+
+        stop_button.setOnClickListener {
+            if (isRunning) {
+                chronometer.stop()
+                isRunning = false
+            }
+        }
+    }
+
+```
+
