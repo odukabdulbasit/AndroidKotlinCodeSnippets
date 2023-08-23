@@ -555,3 +555,50 @@ class MainActivity : AppCompatActivity() {
 
 ```
 
+
+### <ins> Project 16: Camera App </ins>
+* [Camera App](https://github.com/odukabdulbasit/Camera_App)
+
+```kotlin
+
+<!-- Adding Permissions for Accessing the Camera -->
+<uses-permission android:name="android.permission.CAMERA"/>
+<uses-feature android:name="android.hardware.camera" android:required="true"/>
+
+
+// In your activity
+private val CAMERA_PERMISSION_REQUEST = 100
+
+// Request camera permission
+if (ContextCompat.checkSelfPermission(
+        this,
+        Manifest.permission.CAMERA
+    ) != PackageManager.PERMISSION_GRANTED
+) {
+    ActivityCompat.requestPermissions(
+        this,
+        arrayOf(Manifest.permission.CAMERA),
+        CAMERA_PERMISSION_REQUEST
+    )
+}
+
+
+
+// Handle permission result
+override fun onRequestPermissionsResult(
+    requestCode: Int,
+    permissions: Array<out String>,
+    grantResults: IntArray
+) {
+    if (requestCode == CAMERA_PERMISSION_REQUEST) {
+        if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            // Permission granted, handle camera access
+        } else {
+            // Permission denied, handle denied state
+        }
+    }
+}
+
+
+```
+
