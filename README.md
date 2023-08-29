@@ -811,3 +811,68 @@ class SnackbarFragment : Fragment() {
 
 ```
 
+
+### <ins> Project 20: Shared Preferences Save and Retrive Data </ins>
+* [SharedPreferences](https://github.com/odukabdulbasit/SharedPreferences)
+
+```kotlin
+
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
+import android.content.Context
+import android.content.SharedPreferences
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var usernameEditText: EditText
+    private lateinit var saveButton: Button
+    private lateinit var retrieveButton: Button
+    private lateinit var resultTextView: TextView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Initialize SharedPreferences
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+
+        // Initialize UI elements
+        usernameEditText = findViewById(R.id.usernameEditText)
+        saveButton = findViewById(R.id.saveButton)
+        retrieveButton = findViewById(R.id.retrieveButton)
+        resultTextView = findViewById(R.id.resultTextView)
+
+        // Save button click listener
+        saveButton.setOnClickListener {
+            val username = usernameEditText.text.toString()
+            saveData("username", username)
+            usernameEditText.text.clear()
+        }
+
+        // Retrieve button click listener
+        retrieveButton.setOnClickListener {
+            val savedUsername = getData("username", "")
+            resultTextView.text = "Saved username: $savedUsername"
+        }
+    }
+
+    private fun saveData(key: String, value: String) {
+        val editor = sharedPreferences.edit()
+        editor.putString(key, value)
+        editor.apply()
+    }
+
+    private fun getData(key: String, defaultValue: String): String {
+        return sharedPreferences.getString(key, defaultValue) ?: defaultValue
+    }
+}
+
+```
