@@ -812,7 +812,7 @@ class SnackbarFragment : Fragment() {
 ```
 
 
-### <ins> Project 20: Shared Preferences Save and Retrive Data </ins>
+### <ins> Project 21: Shared Preferences Save and Retrive Data </ins>
 * [SharedPreferences](https://github.com/odukabdulbasit/SharedPreferences)
 
 ```kotlin
