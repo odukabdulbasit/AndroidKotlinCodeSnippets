@@ -876,3 +876,90 @@ class MainActivity : AppCompatActivity() {
 }
 
 ```
+
+
+### <ins> Project 22: Animations </ins>
+* [Animations](https://github.com/odukabdulbasit/Animations)
+
+```kotlin
+
+<!-- res/anim/fade_in.xml -->
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_interpolator"
+    android:fromAlpha="0.0"
+    android:toAlpha="1.0"
+    android:duration="1000" />
+
+
+<!-- res/anim/rotate.xml -->
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="360"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:duration="1000" />
+
+
+<!-- res/anim/scale.xml -->
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXScale="1.0"
+    android:toXScale="1.5"
+    android:fromYScale="1.0"
+    android:toYScale="1.5"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:duration="1000"
+    android:repeatMode="reverse"
+    android:repeatCount="1" />
+
+
+<!-- res/anim/translate.xml -->
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXDelta="0"
+    android:toXDelta="200"
+    android:duration="1000"
+    android:repeatMode="reverse"
+    android:repeatCount="1" />
+
+
+
+
+
+import android.os.Bundle
+import android.view.animation.AnimationUtils
+import android.widget.Button
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var imageView: ImageView
+    private lateinit var buttonFadeIn: Button
+    private lateinit var buttonRotate: Button
+    private lateinit var buttonScale: Button
+    private lateinit var buttonTranslate: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        imageView = findViewById(R.id.imageView)
+        buttonFadeIn = findViewById(R.id.buttonFadeIn)
+        buttonRotate = findViewById(R.id.buttonRotate)
+        buttonScale = findViewById(R.id.buttonScale)
+        buttonTranslate = findViewById(R.id.buttonTranslate)
+
+        val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+        val rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate)
+        val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale)
+        val translateAnimation = AnimationUtils.loadAnimation(this, R.anim.translate)
+
+        buttonFadeIn.setOnClickListener { imageView.startAnimation(fadeInAnimation) }
+        buttonRotate.setOnClickListener { imageView.startAnimation(rotateAnimation) }
+        buttonScale.setOnClickListener { imageView.startAnimation(scaleAnimation) }
+        buttonTranslate.setOnClickListener { imageView.startAnimation(translateAnimation) }
+    }
+}
+
+```
+
