@@ -992,15 +992,15 @@ class SplashActivity : AppCompatActivity() {
 
         // Create a translation animation
         val translateAnimation = TranslateAnimation(0f, 0f, 0f, -100f)
-        translateAnimation.duration = 1500 // 1 second
+        translateAnimation.duration = 1500 // 1.5 second
 
         // Create a rotation animation
         val rotateAnimation = RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
-        rotateAnimation.duration = 1500 // 1 second
+        rotateAnimation.duration = 1500 // 1.5 second
 
         // Create a fade-out animation
         val fadeOutAnimation = AlphaAnimation(1f, 0f)
-        fadeOutAnimation.duration = 2000 // 1 second
+        fadeOutAnimation.duration = 2000 // 2 second
 
         // Combine animations into an AnimationSet
         val animationSet = AnimationSet(true)
