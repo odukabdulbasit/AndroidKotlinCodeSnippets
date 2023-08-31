@@ -1026,7 +1026,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val SPLASH_DELAY: Long = 5000 // 3 seconds
+        private const val SPLASH_DELAY: Long = 5000 // 5 seconds
     }
 }
 
