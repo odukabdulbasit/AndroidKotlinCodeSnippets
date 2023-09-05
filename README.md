@@ -1279,7 +1279,7 @@ class MainActivity : AppCompatActivity() {
 
 
 ### <ins> Project 28: Retrofit </ins>
-* [Retrofit](https://github.com/odukabdulbasit/RssFeedReader)
+* [Retrofit](https://github.com/odukabdulbasit/Retrofit)
 
 ```kotlin
 
