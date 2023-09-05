@@ -1276,3 +1276,46 @@ class MainActivity : AppCompatActivity() {
 }
 
 ```
+
+
+### <ins> Project 28: Retrofit </ins>
+* [Retrofit](https://github.com/odukabdulbasit/RssFeedReader)
+
+```kotlin
+
+// Using Retrofit for Making HTTP Requests to a REST API
+
+// Define your Retrofit instance
+val retrofit = Retrofit.Builder()
+    .baseUrl("https://api.example.com/")
+    .addConverterFactory(GsonConverterFactory.create())
+    .build()
+
+// Create an interface for your API endpoints
+interface MyApiService {
+    @GET("posts")
+    suspend fun getPosts(): Response<List<Post>>
+}
+
+// Create a Retrofit service
+val apiService = retrofit.create(MyApiService::class.java)
+
+// Make a network request in a Coroutine
+try {
+    val response = apiService.getPosts()
+    if (response.isSuccessful) {
+        val posts = response.body()
+        // Handle the fetched data as needed
+    } else {
+        // Handle error
+    }
+} catch (e: Exception) {
+    e.printStackTrace()
+}
+
+```
+
+
+
+
+
