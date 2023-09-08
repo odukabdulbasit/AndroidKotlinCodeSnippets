@@ -1459,3 +1459,65 @@ class MainActivity : AppCompatActivity() {
 ```
 
 
+### <ins> Project 31: Custom ListView </ins>
+* [Custom ListView](https://github.com/odukabdulbasit/CustomListView)
+
+```kotlin
+
+// MainActivity.kt
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val listView = findViewById<ListView>(R.id.listView)
+
+        // Sample data
+        val data = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+
+        // Create and set the custom adapter
+        val adapter = CustomListAdapter(this, data)
+        listView.adapter = adapter
+
+    }
+}
+
+
+// CustomListAdapter
+class CustomListAdapter(context: Context, private val data: List<String>) :
+    ArrayAdapter<String>(context, R.layout.list_item, data) {
+
+    // ViewHolder pattern for efficient view recycling
+    private class ViewHolder {
+        internal var textView: TextView? = null
+    }
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        var convertView = convertView
+        val holder: ViewHolder
+
+        if (convertView == null) {
+            // Inflate the custom list item layout
+            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            convertView = inflater.inflate(R.layout.list_item, null)
+
+            // Initialize the ViewHolder
+            holder = ViewHolder()
+            holder.textView = convertView.findViewById(R.id.textView) as TextView
+            convertView.tag = holder
+        } else {
+            // Reuse the existing ViewHolder
+            holder = convertView.tag as ViewHolder
+        }
+
+        // Set the data for the list item
+        val item = data[position]
+        holder.textView?.text = item
+
+        return convertView!!
+    }
+}
+
+
+```
+
