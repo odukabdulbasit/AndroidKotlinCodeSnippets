@@ -1568,3 +1568,76 @@ class MainActivity : AppCompatActivity() {
     }
 
 ```
+
+
+### <ins> Project 33: Custom ProgressBar with CircularProgressDrawable </ins>
+* [Custom ProgressBar with CircularProgressDrawable](https://github.com/odukabdulbasit/CustomProgressBar)
+
+```kotlin
+
+// MainActivity.kt
+import android.os.Bundle
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val circularProgressDrawable = CircularProgressDrawable(this)
+        circularProgressDrawable.strokeWidth = 10f
+        circularProgressDrawable.centerRadius = 50f
+        circularProgressDrawable.setColorSchemeColors(ContextCompat.getColor(this, com.google.android.material.R.color.accent_material_light))
+        circularProgressDrawable.start()
+
+        val imageView = findViewById<ImageView>(R.id.progressImageView)
+        imageView.setImageDrawable(circularProgressDrawable)
+    }
+}
+
+
+// circular_progress_drawable.xml
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@android:id/background"
+        android:drawable="@drawable/circle_gray" />
+    <item
+        android:id="@android:id/progress"
+        android:drawable="@drawable/circle_progress" />
+</layer-list>
+
+
+// circle_gray
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring"
+    android:useLevel="false"
+    android:innerRadiusRatio="2.5"
+    android:thicknessRatio="10"
+    android:angle="0"
+    android:color="#DDDDDD">
+</shape>
+
+
+// circle_progress
+<?xml version="1.0" encoding="utf-8"?>
+<rotate
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="360">
+    <shape
+        android:shape="ring"
+        android:useLevel="true"
+        android:innerRadiusRatio="2.5"
+        android:thicknessRatio="10"
+        android:angle="0"
+        android:color="#3498db">
+    </shape>
+</rotate>
+
+```
